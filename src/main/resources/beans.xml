@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="simpleBean" class="home.lev.SimpleBean">
+
+        <constructor-arg ref="bar"></constructor-arg>
+        <constructor-arg ref="buz"></constructor-arg>
+
+    </bean>
+
+    <bean name="buz" class="home.lev.Buz"/>
+    <bean name="bar" class="home.lev.Bar"/>
+
+    <bean name="ClassWithStringArg" class="home.lev.ClassWithStringArg">
+        <constructor-arg index="0" value="FIRST"/>
+        <constructor-arg index="1" value="SECOND"/>
+        <constructor-arg index="2" value="333"/>
+    </bean>
+
+    <bean class="home.lev.ClassRefersNamesInBean">
+
+        <constructor-arg name="one" value="ONE"/>
+        <constructor-arg name="two" value="TWO"/>
+    </bean>
+
+    <bean name="ClassSetterBased" class="home.lev.ClassSetterBased">
+        <property name="name" value="My name"/>
+        <property name="address" value="My adress"/>
+        <property name="bar">
+            <ref bean="bar"/>
+        </property>
+    </bean>
+    <bean class="home.lev.ClassStaticBuilder" factory-method="createMe">
+        <constructor-arg name="one" value="One value"/>
+    </bean>
+
+</beans>
