@@ -37,4 +37,26 @@
         <constructor-arg name="one" value="One value"/>
     </bean>
 
+
+
+<bean class="home.lev.ExampleWithList" name="exampleWithList">
+    <property name="myint">
+        <map>
+            <entry key="one0" value="12"/>
+            <entry key="one1" value="122"/>
+            <entry key="one2" value="1222"/>
+            <entry key="one3" value="12222"/>
+        </map>
+    </property>
+    <property name="myList">
+        <list>
+            <value>"one0"</value>
+            <value>"one1"</value>
+            <value>"one2"</value>
+        </list>
+
+    </property>
+</bean>
+
+
 </beans>
