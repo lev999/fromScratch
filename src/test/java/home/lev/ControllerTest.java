@@ -17,9 +17,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * Created by pc-users on 7/12/2015.
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("file:src/main/webapp/WEB-INF/servlet-context.xml")
@@ -31,16 +28,16 @@ public class ControllerTest {
     private MockMvc mockMvc;
 
     @Before
-public void setUp(){
-     this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-}
+    public void setUp(){
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+    }
 
     @Test
     public void RunMe() throws Exception {
         this.mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-        .andExpect(content().string("Hello world"))
-        .andDo(print())
+                .andExpect(content().string("Hello world"))
+                .andDo(print())
         ;
     }
 }
