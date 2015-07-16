@@ -37,7 +37,7 @@
        </bean>
 
        <bean id="personDao" class="home.lev.hibernate.entityDAO.PersonDaoImpl">
-              <property name="sessionFactory" ref="sessionFactory"/>
+              <!--<property name="sessionFactory" ref="sessionFactory"/>-->
        </bean>
 
        <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
@@ -47,16 +47,3 @@
        <tx:annotation-driven/>
 </beans>
 
-
-<!--<bean id="transactionManager"-->
-      <!--class="org.springframework.orm.hibernate3.HibernateTransactionManager">-->
-       <!--<property name="sessionFactory" ref="sessionFactory"/>-->
-<!--</bean>-->
-
-<!--<tx:annotation-driven/>-->
-
-<!--<bean id="myProductService" class="product.SimpleProductService">-->
-       <!--<property name="productDao" ref="myProductDao"/>-->
-<!--</bean>-->
-
-<!--</beans>-->
