@@ -4,42 +4,42 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="simpleBean" class="home.lev.SimpleBean">
+    <bean id="simpleBean" class="home.lev.playwithbeans.SimpleBean">
 
         <constructor-arg ref="bar"></constructor-arg>
         <constructor-arg ref="buz"></constructor-arg>
 
     </bean>
 
-    <bean name="buz" class="home.lev.Buz"/>
-    <bean name="bar" class="home.lev.Bar"/>
+    <bean name="buz" class="home.lev.playwithbeans.Buz"/>
+    <bean name="bar" class="home.lev.playwithbeans.Bar"/>
 
-    <bean name="ClassWithStringArg" class="home.lev.ClassWithStringArg">
+    <bean name="ClassWithStringArg" class="home.lev.playwithbeans.ClassWithStringArg">
         <constructor-arg index="0" value="FIRST"/>
         <constructor-arg index="1" value="SECOND"/>
         <constructor-arg index="2" value="333"/>
     </bean>
 
-    <bean class="home.lev.ClassRefersNamesInBean">
+    <bean class="home.lev.playwithbeans.ClassRefersNamesInBean">
 
         <constructor-arg name="one" value="ONE"/>
         <constructor-arg name="two" value="TWO"/>
     </bean>
 
-    <bean name="ClassSetterBased" class="home.lev.ClassSetterBased">
+    <bean name="ClassSetterBased" class="home.lev.playwithbeans.ClassSetterBased">
         <property name="name" value="My name"/>
         <property name="address" value="My adress"/>
         <property name="bar">
             <ref bean="bar"/>
         </property>
     </bean>
-    <bean class="home.lev.ClassStaticBuilder" factory-method="createMe">
+    <bean class="home.lev.playwithbeans.ClassStaticBuilder" factory-method="createMe">
         <constructor-arg name="one" value="One value"/>
     </bean>
 
 
 
-<bean class="home.lev.ExampleWithList" name="exampleWithList">
+<bean class="home.lev.playwithbeans.ExampleWithList" name="exampleWithList">
     <property name="myint">
         <map>
             <entry key="one0" value="12"/>
